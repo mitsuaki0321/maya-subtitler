@@ -50,16 +50,16 @@ uv run python -m subtitler.gui
 ### CLI
 
 ```bash
-# Japanese audio � Japanese subtitles
+# Japanese audio -> Japanese subtitles
 subtitler ja audio.mp3
 
-# Japanese audio � Japanese subtitles + English translation
+# Japanese audio -> Japanese subtitles + English translation
 subtitler ja audio.mp3 --with-english
 
-# English audio � English subtitles
+# English audio -> English subtitles
 subtitler en audio.mp3
 
-# Japanese subtitles � Romaji subtitles
+# Japanese subtitles -> Romaji subtitles
 subtitler romaji subtitle_ja.srt
 ```
 

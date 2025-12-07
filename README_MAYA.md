@@ -36,9 +36,9 @@ MAYA_MODULE_PATH=C:\path\to\maya-subtitler
 
 ### Manual Installation
 
-1. `plug-ins/subtitleLocator.py` → Maya's plug-ins folder
-2. `scripts/maya_subtitler/` → Maya's scripts folder
-3. `scripts/AEsubtitleLocatorTemplate.mel` → Maya's scripts folder
+1. `plug-ins/subtitleLocator.py` -> Maya's plug-ins folder
+2. `scripts/maya_subtitler/` -> Maya's scripts folder
+3. `scripts/AEsubtitleLocatorTemplate.mel` -> Maya's scripts folder
 
 ## Usage
 
