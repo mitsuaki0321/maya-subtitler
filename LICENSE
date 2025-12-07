@@ -1,0 +1,65 @@
+MIT License
+
+Copyright (c) 2024 mitsuaki0321
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Third-Party Libraries / サードパーティライブラリについて
+
+This software uses the following third-party libraries. Each library is
+subject to its own license terms. Users must comply with the respective
+licenses of these libraries.
+
+**THE AUTHOR OF THIS SOFTWARE TAKES NO RESPONSIBILITY FOR ANY LICENSE
+VIOLATIONS OR LEGAL ISSUES ARISING FROM THE USE OF THIRD-PARTY LIBRARIES.
+USERS ARE SOLELY RESPONSIBLE FOR ENSURING COMPLIANCE WITH ALL APPLICABLE
+LICENSES.**
+
+このソフトウェアは以下のサードパーティライブラリを使用しています。
+各ライブラリはそれぞれ固有のライセンス条項に従います。
+ユーザーはこれらのライブラリの各ライセンスを遵守する必要があります。
+
+**本ソフトウェアの作者は、サードパーティライブラリの使用に起因する
+ライセンス違反や法的問題について一切の責任を負いません。
+すべての適用されるライセンスの遵守は、ユーザー自身の責任となります。**
+
+### Libraries Used / 使用ライブラリ
+
+| Library | License | URL |
+|---------|---------|-----|
+| OpenAI Whisper | MIT | https://github.com/openai/whisper |
+| PyTorch | BSD-3-Clause | https://github.com/pytorch/pytorch |
+| pykakasi | GPL-3.0 | https://github.com/miurahr/pykakasi |
+| PySide6 | LGPL-3.0 / Commercial | https://www.qt.io/licensing |
+
+### Important Notes / 重要事項
+
+- **pykakasi** is licensed under GPL-3.0. If you distribute this software
+  with pykakasi, you may need to comply with GPL-3.0 requirements.
+
+  **pykakasi** は GPL-3.0 ライセンスです。pykakasi を含めて本ソフトウェアを
+  配布する場合、GPL-3.0 の要件に従う必要がある場合があります。
+
+- **PySide6** is available under LGPL-3.0 or commercial license.
+  Please review Qt's licensing terms for your use case.
+
+  **PySide6** は LGPL-3.0 または商用ライセンスで利用可能です。
+  ご使用のケースに応じて Qt のライセンス条項をご確認ください。
