@@ -9,6 +9,9 @@ wheels/
 # Virtual environments
 .venv/
 
+# Lock files (torch version varies by CUDA)
+uv.lock
+
 # Project data directories
 models/
 input/
