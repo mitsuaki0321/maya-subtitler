@@ -47,7 +47,7 @@ LICENSES.**
 |---------|---------|-----|
 | OpenAI Whisper | MIT | https://github.com/openai/whisper |
 | PyTorch | BSD-3-Clause | https://github.com/pytorch/pytorch |
-| pykakasi | GPL-3.0 | https://github.com/miurahr/pykakasi |
+| pykakasi | GPL-3.0-or-later | https://github.com/miurahr/pykakasi |
 | PySide6 | LGPL-3.0 / Commercial | https://www.qt.io/licensing |
 
 ### Important Notes / 重要事項
