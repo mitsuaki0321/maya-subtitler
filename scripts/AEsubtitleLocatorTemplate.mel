@@ -1,0 +1,115 @@
+//
+// AEsubtitleLocatorTemplate.mel
+//
+// Attribute Editor template for subtitleLocator node.
+//
+
+global proc AEsubtitleLocatorTemplate(string $nodeName)
+{
+    editorTemplate -beginScrollLayout;
+
+    // Settings Section
+    editorTemplate -beginLayout "Settings" -collapse 0;
+
+        // Subtitle File
+        editorTemplate -callCustom "AEsubtitleLocatorFileBrowseNew"
+                                   "AEsubtitleLocatorFileBrowseReplace"
+                                   "subtitleFile";
+
+        editorTemplate -addSeparator;
+
+        // Timing
+        editorTemplate -label "Start Frame" -addControl "startFrame";
+
+        editorTemplate -addSeparator;
+
+        // Display
+        editorTemplate -label "Font Size" -addControl "fontSize";
+        editorTemplate -label "Font Color" -addControl "fontColor";
+        editorTemplate -label "Position X" -addControl "positionX";
+        editorTemplate -label "Position Y" -addControl "positionY";
+
+        editorTemplate -addSeparator;
+
+        // Text Wrapping
+        editorTemplate -label "Enable Wrapping" -addControl "wrapText";
+        editorTemplate -label "Word Wrap" -addControl "wordWrap";
+        editorTemplate -label "Max Chars Per Line" -addControl "maxCharsPerLine";
+        editorTemplate -label "Max Lines" -addControl "maxLines";
+
+        editorTemplate -addSeparator;
+
+        // Camera
+        editorTemplate -label "Target Camera" -addControl "targetCamera";
+
+    editorTemplate -endLayout;
+
+    // Suppress attributes we don't want to show
+    editorTemplate -suppress "localPosition";
+    editorTemplate -suppress "localScale";
+
+    // Include base class attributes
+    AEdependNodeTemplate $nodeName;
+
+    editorTemplate -addExtraControls;
+    editorTemplate -endScrollLayout;
+}
+
+
+//
+// Custom file browser for subtitleFile attribute
+//
+global proc AEsubtitleLocatorFileBrowseNew(string $attrName)
+{
+    setUITemplate -pst attributeEditorTemplate;
+
+    rowLayout -nc 3 -adj 2 subtitleFileLayout;
+        text -label "Subtitle File" subtitleFileLabel;
+        textField -ed 1 subtitleFileField;
+        symbolButton -image "navButtonBrowse.xpm"
+                     -command ("AEsubtitleLocatorBrowseForFile " + $attrName)
+                     subtitleFileBrowseBtn;
+    setParent ..;
+
+    setUITemplate -ppt;
+
+    AEsubtitleLocatorFileBrowseReplace $attrName;
+}
+
+
+global proc AEsubtitleLocatorFileBrowseReplace(string $attrName)
+{
+    string $currentValue = `getAttr $attrName`;
+    textField -e -text $currentValue subtitleFileField;
+
+    // Update the text field change command
+    textField -e -cc ("setAttr -type \"string\" " + $attrName + " `textField -q -text subtitleFileField`")
+              subtitleFileField;
+
+    // Update browse button command
+    symbolButton -e -command ("AEsubtitleLocatorBrowseForFile " + $attrName)
+                 subtitleFileBrowseBtn;
+}
+
+
+global proc AEsubtitleLocatorBrowseForFile(string $attrName)
+{
+    string $currentValue = `getAttr $attrName`;
+    string $startDir = "";
+
+    // Get starting directory from current value
+    if ($currentValue != "") {
+        $startDir = dirname($currentValue);
+    }
+
+    // Open file dialog
+    string $result[] = `fileDialog2 -fileMode 1
+                                    -caption "Select SRT File"
+                                    -fileFilter "SRT Files (*.srt);;All Files (*.*)"
+                                    -startingDirectory $startDir`;
+
+    if (size($result) > 0) {
+        setAttr -type "string" $attrName $result[0];
+        textField -e -text $result[0] subtitleFileField;
+    }
+}
